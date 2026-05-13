@@ -1,88 +1,123 @@
-# MagicYStudio Workspace
+<div align="center">
 
-> 个人 AI 开发工作站 — 本地优先 · 极简科技风 · AI Native
+<img src="https://raw.githubusercontent.com/M0g1cY/magicystudio-workspace/main/public/og.png" alt="MagicYStudio Workspace" width="100%" />
 
-MagicYStudio 是一个面向独立开发者的个人工作站，统一管理代码编辑器、文件、项目和 AI 工具入口，减少软件切换，提升开发效率。
+</div>
+
+<p align="center">
+  <strong>个人 AI 开发工作站</strong><br />
+  <sub>本地优先 · 极简科技 · 零后端依赖</sub>
+</p>
+
+<p align="center">
+  <a href="#-本地运行"><img src="https://img.shields.io/badge/next.js-15-black?style=flat&logo=next.js" /></a>
+  <a href="#-技术栈"><img src="https://img.shields.io/badge/typescript-5.7-3178C6?style=flat&logo=typescript" /></a>
+  <a href="#-技术栈"><img src="https://img.shields.io/badge/tailwind-3.4-06B6D4?style=flat&logo=tailwindcss" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-333.svg?style=flat" /></a>
+  <a href="https://magicystudio.vercel.app"><img src="https://img.shields.io/badge/ deploy-vercel-000.svg?style=flat&logo=vercel" /></a>
+</p>
 
 ---
 
-## 技术栈
+## 概述
 
-| 分类 | 技术 |
-|---|---|
-| 框架 | Next.js 15 (App Router) + React 19 |
-| 语言 | TypeScript (strict mode, 零 `any`) |
-| 样式 | TailwindCSS 3.4 + shadcn/ui |
-| 存储 | IndexedDB (idb) + LocalStorage（本地优先，无需后端） |
-| 编辑器 | Monaco Editor (`@monaco-editor/react`) |
-| 图标 | Lucide React |
-| 部署 | Vercel (零配置) |
+MagicYStudio Workspace 是一个面向独立开发者的 **个人 AI 开发工作站**。它将代码编辑器、文件管理、项目跟踪和 AI 工具入口统一到一个极简界面中，消除软件切换，专注编码。
+
+<br />
+
+<p align="center">
+  <table>
+    <tr>
+      <td width="25%" align="center"><strong>🎨</strong><br />极简科技风</td>
+      <td width="25%" align="center"><strong>🌙</strong><br />深色优先</td>
+      <td width="25%" align="center"><strong>💾</strong><br />本地存储</td>
+      <td width="25%" align="center"><strong>⚡</strong><br />零后端</td>
+    </tr>
+  </table>
+</p>
 
 ---
 
-## 页面路由
+## 功能模块
 
-| URL | 页面 | 描述 |
+<table>
+  <tr>
+    <td width="50%">
+      <h3>⌘ &nbsp;Dashboard</h3>
+      <p>今日工作区统计、快速访问入口、项目进度卡片、待办事项列表、最近文件网格。首次加载自动填充演示数据，存储在浏览器本地存储中。</p>
+    </td>
+    <td width="50%">
+      <h3>⌘ &nbsp;代码编辑器</h3>
+      <p>内嵌 Monaco Editor，支持 TypeScript / JavaScript / JSON / Markdown。3秒防抖自动保存、文件导入导出、Markdown 分屏实时预览。</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>⌘ &nbsp;文件管理器</h3>
+      <p>拖拽上传，按类型筛选（TS/JS/JSON/CSV/MD）。JSON 格式化预览、CSV 表格渲染、Markdown 预览，点击文件直接跳转编辑器。</p>
+    </td>
+    <td width="50%">
+      <h3>⌘ &nbsp;项目管理</h3>
+      <p>创建项目、里程碑跟踪、迭代日志（更新/修复/新功能）、关联代码文件。纯本地，一个项目一条 IndexedDB 记录。</p>
+    </td>
+  </tr>
+</table>
+
+| 功能 | 描述 | 状态 |
 |---|---|---|
-| `/` | 首页 Dashboard | 今日工作区统计 + 快速访问 + 项目进度 + 待办 + 最近文件 |
-| `/editor` | 代码编辑器 | Monaco Editor，TS/JS/JSON/Markdown，自动保存，导入/导出 |
-| `/files` | 文件管理器 | 拖拽上传，按类型筛选，JSON 格式化预览，CSV 表格预览 |
-| `/projects` | 项目管理 | 项目 CRUD，里程碑跟踪，迭代日志（更新/修复/新功能），文件关联 |
-| `/settings` | 设置 | 深色/浅色切换，清除缓存，清除全部数据 |
+| Dashboard 首页 | 工作区统计 + 快速访问 + 项目进度 + 待办 + 最近文件 | ✅ |
+| Monaco 编辑器 | 语法高亮、自动保存、导入导出、Markdown 预览 | ✅ |
+| 文件拖拽上传 | 拖拽或点击上传，存入 IndexedDB | ✅ |
+| JSON / CSV 预览 | 格式化渲染 + 表格视图 | ✅ |
+| 文件类型筛选 | 全部 / TS-JS / JSON / CSV / Markdown | ✅ |
+| 项目里程碑 | 节点添加、状态切换、进度百分比 | ✅ |
+| 迭代日志 | 更新 / 修复 / 新功能三种类型，时间线展示 | ✅ |
+| 待办事项 | 内联添加、勾选完成、删除 | ✅ |
+| 深色 / 浅色切换 | 默认深色，偏好持久化到 LocalStorage | ✅ |
+| 数据清除 | 清除缓存 + 清除全部 IndexedDB 数据 | ✅ |
 
 ---
 
-## 本地运行
+## 架构
 
-```bash
-# 安装依赖
-npm install
-
-# 开发模式
-npm run dev
-# → http://localhost:3000
-
-# 生产构建
-npm run build
-npm start
+```
+┌─────────────────────────────────────────────────────────┐
+│                     Browser (Client)                    │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐  │
+│  │ Dashboard │ │  Editor  │ │  Files   │ │ Projects │  │
+│  │    /      │ │ /editor  │ │  /files  │ │/projects │  │
+│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘  │
+│       │             │            │            │         │
+│  ┌────┴─────────────┴────────────┴────────────┴─────┐  │
+│  │              Shared Layout Shell                  │  │
+│  │    Sidebar · Breadcrumb · FileContext Provider    │  │
+│  └──────────────────────┬───────────────────────────┘  │
+│                         │                               │
+│  ┌──────────────────────┴───────────────────────────┐  │
+│  │                  Data Layer                       │  │
+│  │  ┌──────────┐  ┌──────────┐  ┌───────────────┐   │  │
+│  │  │ IndexedDB │  │LocalStor.│  │ FileContext    │   │  │
+│  │  │(files,    │  │(theme,   │  │(cross-page    │   │  │
+│  │  │ projects, │  │ recent,  │  │ file sharing) │   │  │
+│  │  │ todos)    │  │ layout)  │  │               │   │  │
+│  │  └──────────┘  └──────────┘  └───────────────┘   │  │
+│  └──────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────┘
 ```
 
-首次打开首页时，系统自动填充演示种子数据（项目、待办、文件），存储在浏览器 IndexedDB 中，刷新不丢失。
+**数据流向**
 
----
-
-## Vercel 部署
-
-项目零配置可直接部署到 Vercel：
-
-1. 将项目推送到 GitHub 仓库
-2. 在 [vercel.com](https://vercel.com) 导入该仓库
-3. Vercel 自动识别 Next.js 项目，无需额外配置
-4. 部署完成即可访问
-
-```bash
-# 或使用 Vercel CLI
-npm i -g vercel
-vercel
+```
+User Action → React State → IndexedDB CRUD → UI Re-render
+                                    ↕
+                              LocalStorage
+                           (preferences only)
 ```
 
----
-
-## MVP 功能清单
-
-| # | 功能 | 状态 | 实现方式 |
-|---|---|---|---|
-| 1 | 首页 Dashboard | ✅ | 今日工作区 + 快速访问 + 项目卡片 + 待办 + 最近文件 |
-| 2 | 代码编辑器 | ✅ | Monaco Editor，3s 防抖自动保存，Markdown 分屏预览 |
-| 3 | 文件上传 | ✅ | 拖拽上传 + 点击上传，存入 IndexedDB |
-| 4 | JSON 格式化预览 | ✅ | `JSON.stringify(obj, null, 2)` 格式化渲染 |
-| 5 | CSV 表格预览 | ✅ | 解析为 `<table>`，表头固定，显示前 50 行 |
-| 6 | 文件按类型筛选 | ✅ | 全部 / TS-JS / JSON / CSV / Markdown |
-| 7 | 项目管理 | ✅ | 创建 / 里程碑 / 迭代日志 / 文件关联 |
-| 8 | 待办事项 | ✅ | 内联添加 / 勾选完成 / 删除 |
-| 9 | 深色/浅色切换 | ✅ | 默认深色，一键切换，偏好持久化 |
-| 10 | 最近文件 | ✅ | LocalStorage 记录，Dashboard 卡片展示 + 类型标签 |
-| 11 | 数据清除 | ✅ | 清除缓存 (LocalStorage) + 清除全部数据 (IndexedDB) |
+- **IndexedDB** 存储业务数据：文件、项目、待办事项
+- **LocalStorage** 存储偏好设置：主题、最近文件列表、布局配置
+- **FileContext** 跨页面状态：文件管理器选中文件 → 编辑器打开
+- **Seed Module** 首次加载时幂等填充演示数据
 
 ---
 
@@ -90,80 +125,162 @@ vercel
 
 ```
 magicy-studio/
-├── app/
-│   ├── layout.tsx               # 根布局（html + ThemeProvider）
-│   ├── globals.css              # Tailwind + CSS 变量（深/浅）
-│   ├── error.tsx                # 路由级错误边界
-│   ├── global-error.tsx         # 全局错误边界
-│   └── (main)/                  # 路由组（共享侧边栏布局）
-│       ├── layout.tsx           # Sidebar + Breadcrumb + FileProvider
-│       ├── page.tsx             # /          首页 Dashboard
-│       ├── editor/page.tsx      # /editor    代码编辑器
-│       ├── files/page.tsx       # /files     文件管理器
-│       ├── projects/page.tsx    # /projects  项目管理
-│       └── settings/page.tsx    # /settings  设置
+├── app/                             # Next.js App Router
+│   ├── layout.tsx                   # 根布局（html + ThemeProvider）
+│   ├── globals.css                  # Tailwind 指令 + CSS 变量
+│   ├── error.tsx                    # 路由级错误边界
+│   ├── global-error.tsx            # 全局错误边界
+│   └── (main)/                      # 路由组（共享 Sidebar 壳）
+│       ├── layout.tsx               # 侧边栏 + 面包屑 + FileProvider
+│       ├── page.tsx                 # → /
+│       ├── editor/page.tsx          # → /editor
+│       ├── files/page.tsx           # → /files
+│       ├── projects/page.tsx        # → /projects
+│       └── settings/page.tsx        # → /settings
+│
 ├── components/
-│   ├── ui/                      # shadcn/ui (Button, Card, Input, Switch, Tabs)
-│   └── theme-provider.tsx       # 深色/浅色主题 Provider
-├── modules/
-│   ├── dashboard/               # 7 个组件：Header, Stats, QuickAccess,
-│   │                            #   ProjectCard, TodoCard, RecentFiles, Dashboard
-│   ├── editor/code-editor.tsx   # Monaco 编辑器
-│   ├── file-manager/file-manager.tsx  # 文件管理
-│   ├── project/project-manager.tsx    # 项目管理
-│   └── settings/settings.tsx    # 设置
+│   ├── ui/                          # shadcn/ui 基组件
+│   │   ├── button.tsx               #   Button（Slot 模式）
+│   │   ├── card.tsx                 #   Card
+│   │   ├── input.tsx                #   Input
+│   │   ├── switch.tsx               #   Switch（主题切换）
+│   │   └── tabs.tsx                 #   Tabs
+│   └── theme-provider.tsx           # Theme Context Provider
+│
+├── modules/                         # 功能模块（每个含全部业务逻辑）
+│   ├── dashboard/                   # 7 个子组件
+│   │   ├── dashboard.tsx            #   容器 + 种子初始化
+│   │   ├── dashboard-header.tsx     #   Hero 区
+│   │   ├── dashboard-stats.tsx      #   今日工作区统计
+│   │   ├── quick-access-grid.tsx    #   4 工具快速入口
+│   │   ├── project-progress-card.tsx #  项目进度卡片
+│   │   ├── todo-card.tsx            #   待办事项
+│   │   └── recent-files-card.tsx    #   最近文件（含类型标签）
+│   ├── editor/
+│   │   └── code-editor.tsx          # Monaco + 保存 + Markdown 预览
+│   ├── file-manager/
+│   │   └── file-manager.tsx         # 拖拽上传 + 筛选 + JSON/CSV 预览
+│   ├── project/
+│   │   └── project-manager.tsx      # CRUD + 里程碑 + 日志 + 文件关联
+│   └── settings/
+│       └── settings.tsx             # 主题切换 + 数据管理
+│
 ├── lib/
-│   ├── types.ts                 # 共享类型定义（FileItem, Project, Todo 等）
-│   ├── utils.ts                 # cn(), formatDate(), formatFileSize(), getFileType()
-│   ├── context/file-context.tsx # 跨页面文件状态共享
+│   ├── types.ts                     # 共享类型（FileItem, Project, Todo...）
+│   ├── utils.ts                     # cn() / formatDate / formatFileSize
+│   ├── context/
+│   │   └── file-context.tsx         # React Context 跨页文件共享
 │   └── storage/
-│       ├── db.ts                # IndexedDB CRUD（files, projects, todos）
-│       ├── local-storage.ts     # LocalStorage 工具 + 键名常量
-│       └── seed.ts              # 首次加载种子数据（幂等）
-├── next.config.js               # Next.js 配置（standalone 输出）
-├── tailwind.config.js           # Tailwind 配置（深色模式 + 自定义动画）
-├── postcss.config.js            # PostCSS 配置
-├── tsconfig.json                # TypeScript 配置
-├── .env.example                 # 环境变量示例（MVP 无需）
+│       ├── db.ts                    # IndexedDB (idb) — 3 张表
+│       ├── local-storage.ts         # LocalStorage 工具
+│       └── seed.ts                  # 首次加载演示数据
+│
+├── public/                          # 静态资源
+├── next.config.js                   # output: standalone
+├── tailwind.config.js               # darkMode: class + 自定义动画
+├── postcss.config.js
+├── tsconfig.json                    # strict + path aliases
+├── .env.example                     # 环境变量（MVP 无需）
 └── package.json
 ```
 
 ---
 
-## 设计规范
+## 技术栈
 
-- **风格**: 极简科技风，参考 Linear / Raycast / Vercel
-- **配色**: 暖橙 `#E67E22` 作为强调色，深灰/黑为主色调
-- **圆角**: `rounded-2xl` (0.75rem + 4px)
-- **阴影**: `card-shadow` + `hover:card-shadow-hover`（深浅模式各自适配）
-- **动效**: `hover:-translate-y-0.5` 微上浮 + `animate-fade-in/slide-up`
-- **布局**: `max-w-6xl` (1152px) 居中，大留白，卡片式
+| 层 | 技术 | 说明 |
+|---|---|---|
+| **框架** | Next.js 15 + React 19 | App Router · Route Groups · Server Components |
+| **语言** | TypeScript 5.7 | Strict mode · 零 `any` · 共享类型定义 |
+| **样式** | TailwindCSS 3.4 + shadcn/ui | CSS 变量 · `darkMode: class` · 自定义动画 |
+| **编辑器** | Monaco Editor | `@monaco-editor/react` · OnMount 类型安全 |
+| **存储** | IndexedDB (idb 8.x) + LocalStorage | 3 张 object store · 幂等种子数据 |
+| **图标** | Lucide React | Tree-shaking · SVG 图标 |
+| **部署** | Vercel | 零配置 · `output: standalone` |
+| **工具** | clsx + tailwind-merge + cva | `cn()` · 类名合并 · Button variants |
 
 ---
 
-## 后续计划
+## 本地运行
 
-| 优先级 | 功能 | 描述 |
-|---|---|---|
-| P0 | 终端模块 | `/terminal` 路由 + xterm.js 内嵌终端 |
-| P0 | AI 聊天面板 | `/ai` 路由 + Claude API 对话 |
-| P1 | 编辑器多 Tab | 同时编辑多个文件，Tab 切换 |
-| P1 | 语言切换 | 编辑器支持切换 TS/JS/JSON/MD 模式 |
-| P2 | 云备份 | IndexedDB → 阿里云 OSS / 腾讯云 COS |
-| P2 | GitHub 集成 | 项目关联 GitHub 仓库，查看 commit 记录 |
-| P3 | PWA | Service Worker 离线缓存，安装到桌面 |
+```bash
+# 1. 克隆仓库
+git clone https://github.com/M0g1cY/magicystudio-workspace.git
+cd magicystudio-workspace
+
+# 2. 安装依赖
+npm install
+
+# 3. 启动开发服务器
+npm run dev
+# → 浏览器打开 http://localhost:3000
+
+# 4. 生产构建
+npm run build
+npm start
+```
+
+首次打开时自动填充演示数据（1 个项目 + 4 条待办 + 4 个文件），存储在浏览器 IndexedDB 中，刷新不丢失。**无需注册、无需登录、无需后端**。
 
 ---
 
 ## 截图
 
-> 占位：运行 `npm run dev` 后截取 Dashboard 首页 + 编辑器页面截图
+<table>
+  <tr>
+    <td><strong>Dashboard</strong><br/><sub>首页 · 深色模式 · 种子数据填充</sub></td>
+    <td><strong>Editor</strong><br/><sub>Monaco Editor · Markdown 分屏预览</sub></td>
+  </tr>
+  <tr>
+    <td><img src="./screenshots/dashboard.png" alt="Dashboard" /></td>
+    <td><img src="./screenshots/editor.png" alt="Editor" /></td>
+  </tr>
+  <tr>
+    <td><strong>File Manager</strong><br/><sub>JSON 格式化预览 · 拖拽上传</sub></td>
+    <td><strong>Project Manager</strong><br/><sub>里程碑跟踪 · 迭代日志</sub></td>
+  </tr>
+  <tr>
+    <td><img src="./screenshots/files.png" alt="File Manager" /></td>
+    <td><img src="./screenshots/projects.png" alt="Project Manager" /></td>
+  </tr>
+</table>
 
-![Dashboard](./screenshots/dashboard.png)
-![Editor](./screenshots/editor.png)
+---
+
+## 设计规范
+
+```
+配色        #E67E22 (orange accent)  +  #1A1A1A (dark bg)  +  #FAF8F5 (light bg)
+圆角        rounded-2xl  (0.75rem + 4px)
+阴影        card-shadow → card-shadow-hover  (深浅双模式)
+动效        hover:-translate-y-0.5  +  animate-fade-in  +  animate-slide-up
+布局        max-w-6xl (1152px) · large whitespace · card grid
+字体        Inter (next/font/google) · antialiased
+```
+
+参考：**Linear** · **Raycast** · **Vercel Design**
+
+---
+
+## Roadmap
+
+```
+v0.1.0 (current)          v0.2.0                     v0.3.0                  v1.0.0
+    │                         │                          │                       │
+    ├─ Dashboard MVP          ├─ /terminal (xterm)       ├─ 云备份 (OSS/COS)     ├─ PWA
+    ├─ Editor (Monaco)        ├─ /ai 面板 (Claude API)   ├─ GitHub 集成          ├─ 桌面应用
+    ├─ File Manager           ├─ 编辑器多 Tab            ├─ 文件拖出导出         ├─ 插件系统
+    ├─ Project Manager        ├─ 全文搜索                └─ 代码片段库           └─ 主题市场
+    └─ Settings               └─ 键盘快捷键
+```
 
 ---
 
 ## License
 
-MIT
+[MIT](LICENSE) © 2025 MagicYStudio
+
+<br />
+<p align="center">
+  <sub>Built with Next.js · TypeScript · TailwindCSS · Monaco · shadcn/ui</sub>
+</p>
