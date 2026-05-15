@@ -17,6 +17,14 @@
   <a href="https://magicystudio.vercel.app"><img src="https://img.shields.io/badge/ deploy-vercel-000.svg?style=flat&logo=vercel" /></a>
 </p>
 
+<br />
+
+<p align="center">
+  <a href="https://raw.githubusercontent.com/M0g1cY/magicystudio-workspace/main/assets/demo.mp4">
+    <img src="https://img.shields.io/badge/▶_Demo_录屏-FF6B35?style=for-the-badge" alt="Demo Video" />
+  </a>
+</p>
+
 ---
 
 ## 概述
