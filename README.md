@@ -19,11 +19,9 @@
 
 <br />
 
-<p align="center">
-  <a href="https://raw.githubusercontent.com/M0g1cY/magicystudio-workspace/main/assets/demo.mp4">
-    <img src="https://img.shields.io/badge/▶_Demo_录屏-FF6B35?style=for-the-badge" alt="Demo Video" />
-  </a>
-</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/M0g1cY/magicystudio-workspace/main/assets/demo.gif" alt="MagicYStudio Demo" width="100%" />
+</div>
 
 ---
 
